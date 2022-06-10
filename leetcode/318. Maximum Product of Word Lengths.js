@@ -4,32 +4,24 @@
  * @param {string[]} words
  * @return {number}
  */
-
-// Time Limit Exceeded!
 var maxProduct = function (words) {
-  words.sort((a, b) => b.length - a.length);
+  var max = 0;
+  var holder = new Array(words.length).fill(0);
 
-  let max = 0;
+  for (var i = 0; i < words.length; i++) {
+    for (var j = 0; j < words[i].length; j++) {
+      holder[i] |= 1 << (words[i].charCodeAt(j) - 97);
+    }
+  }
 
-  for (let i = 0; i < words.length - 1; i++) {
-    if (max > words[i].length * words[i + 1].length) return max;
-    for (let j = i + 1; j < words.length; j++) {
-      if (isDup(words[i], words[j])) {
+  var len = words.length - 1;
+  for (var i = 0; i < len; i++) {
+    for (var j = i + 1; j <= len; j++) {
+      if ((holder[i] & holder[j]) === 0) {
         max = Math.max(max, words[i].length * words[j].length);
       }
     }
   }
+
   return max;
 };
-
-function isDup(a, b) {
-  let aSet = [...new Set(a.split(""))];
-  let bSet = [...new Set(b.split(""))];
-
-  for (let i = 0; i < aSet.length; i++) {
-    if (bSet.includes(aSet[i])) {
-      return false;
-    }
-  }
-  return true;
-}
