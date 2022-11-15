@@ -8,8 +8,8 @@
 
 ## programmers
 
-- **level 1** - **24**
-- **level 2** - **17**
+- **level 1** - **26**
+- **level 2** - **18**
 - **level 3** - **0**
 - **level 4** - **0**
 - **level 5** - **0**
