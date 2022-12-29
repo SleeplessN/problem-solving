@@ -9,7 +9,7 @@
 ## programmers
 
 - **level 1** - **64**
-- **level 2** - **49**
+- **level 2** - **50**
 - **level 3** - **0**
 - **level 4** - **0**
 - **level 5** - **0**
