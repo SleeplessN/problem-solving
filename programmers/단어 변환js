@@ -1,0 +1,39 @@
+function solution(begin, target, words) {
+  const visited = [];
+  const queue = [[begin, 0]];
+
+  while (queue.length) {
+    let [w, c] = queue.shift();
+    if (w === target) return c;
+
+    words.forEach((word) => {
+      if (!visited.includes(word)) {
+        if (checked(w, word)) {
+          queue.push([word, ++c]);
+          visited.push(word);
+        }
+      }
+    });
+  }
+
+  return 0;
+}
+
+function checked(str1, str2) {
+  let check = 0;
+  for (let i = 0; i < str1.length; i++) {
+    if (str1[i] !== str2[i]) check++;
+  }
+  return check === 1;
+}
+
+let input = [
+  // TC: 1
+  ["hit", "cog", ["hot", "dot", "dog", "lot", "log", "cog"]],
+  // TC: 2
+  ["hit", "cog", ["hot", "dot", "dog", "lot", "log"]],
+];
+
+for (let i = 0; i < input.length; i++) {
+  console.log(`#${i + 1} ${solution(input[i][0], input[i][1], input[i][2])}`);
+}
