@@ -10,7 +10,11 @@
 
 - **level 1** - **73**
 - **level 2** - **79**
-- **level 3** - **5**
+<<<<<<< HEAD
+- **level 3** - **6**
+=======
+- **level 3** - **4**
+>>>>>>> parent of 100575d (Update README.md)
 - **level 4** - **0**
 - **level 5** - **0**
 
